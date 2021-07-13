@@ -61,22 +61,6 @@ class ReplayBuffer():
         assert num_samples<=len(self.buffer)
         return sample(self.buffer, num_samples)
 
-def train(model, state_transitions, tgt):
-
-    state 
-
-    reward
-
-    done
-
-    action
-
-
-
-
-
-        
-    
     
 if __name__ == '__main__':
     

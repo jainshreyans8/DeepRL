@@ -1,0 +1,42 @@
+major components:
+
+Model : DQN
+Replay Buffer
+
+train step : this is basically a one step through the neural network, 
+             it calculates the loss and performs backrprop
+
+
+main step : multiple things happen here -- 
+-- collection of episodes/experience, which builds the buffer for experience replay
+-- training the target network after every episode
+-- updating the behaviour network after some set of episodes
+
+
+Process:
+
+-- Initialize two networks, and fix one of them as target, other as behaviour
+
+-- start the episodes and record the transitions which the agent make throughout the episodes.
+
+    (the transitions which are happening are off-policy, so at every state, agent is taking action
+    with the max Q value and not what the current policy dictates)
+
+
+-- use the sample of transitions to calculate the loss and perform a train step on the target network
+
+-- after certain episodes, update the behaviour network with the parameters of the target network
+
+    (here our targets are dynamic and not static as compared to standard supervised learning,
+    experience replay help us in stabilizing those dynamics to a certain extent)
+
+
+-- this process is repeated again and again till the desired score on the benchmark task is achieved
+
+
+
+
+
+
+
+
